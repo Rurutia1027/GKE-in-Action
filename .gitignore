@@ -1,3 +1,9 @@
-terraform/.terraform.lock.hcl
-terraform/.terraform/
-terraform/terraform.tfstate
+01-terraform-basic/terraform.tfstate
+01-terraform-basic/.terraform.lock.hcl
+01-terraform-basic/.terraform/providers/registry.terraform.io/hashicorp/google/6.50.0/darwin_amd64/LICENSE.txt
+01-terraform-basic/.terraform/providers/registry.terraform.io/hashicorp/google/6.50.0/darwin_amd64/terraform-provider-google_v6.50.0_x5
+02-terraform-autoscaling/.terraform.lock.hcl
+02-terraform-autoscaling/terraform.tfstate
+02-terraform-autoscaling/terraform.tfstate.backup
+02-terraform-autoscaling/.terraform/providers/registry.terraform.io/hashicorp/google/6.50.0/darwin_amd64/LICENSE.txt
+02-terraform-autoscaling/.terraform/providers/registry.terraform.io/hashicorp/google/6.50.0/darwin_amd64/terraform-provider-google_v6.50.0_x5
