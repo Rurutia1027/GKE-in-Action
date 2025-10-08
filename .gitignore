@@ -20,3 +20,8 @@
 04-terraform-vpc-native-GKE/.terraform.lock.hcl
 04-terraform-vpc-native-GKE/.terraform/
 04-terraform-vpc-native-GKE/terraform.tfstate
+05-terraform-GKE-ingress/.terraform.lock.hcl
+05-terraform-GKE-ingress/.terraform.tfstate.lock.info
+05-terraform-GKE-ingress/.terraform/
+05-terraform-GKE-ingress/terraform.tfstate
+05-terraform-GKE-ingress/terraform.tfstate.backup
