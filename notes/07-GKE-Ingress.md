@@ -237,3 +237,7 @@ Behind the scenes, GKE builds **one HTTP(S) Load Balancer** to manage both.
 
 
 **Ingress is an advanced, centralized version of Service type=LoadBalancer.It lets multiple services share one external entry point and routes requests based on hostname or URL path.**
+
+- kubernetes_deployment = internal cluster resource, replicas, image, container ports
+- kubernetes_service = exposes those pods to other pods or externally
+- The Ingress, if added, would sit on top of the Service, providing a single external URL for multiple Services
