@@ -2,10 +2,10 @@
 # then, kubectl get nodes can work 
 
 ############################################################
-# kubernetes.tf — Deploy sample apps and Ingress
+# Kubernetes Provider
 ############################################################
 provider "kubernetes" {
-  host                   = google_container_cluster.route_based_gke_cluster.endpoint
+  host = "https://${google_container_cluster.route_based_gke_cluster.endpoint}"
   token                  = data.google_client_config.default.access_token
   cluster_ca_certificate = base64decode(google_container_cluster.route_based_gke_cluster.master_auth[0].cluster_ca_certificate)
 }
@@ -28,7 +28,7 @@ resource "kubernetes_deployment" "frontend" {
   metadata {
     name      = "frontend"
     namespace = kubernetes_namespace.demo.metadata[0].name
-    labels = { app = "frontend" }
+    labels    = { app = "frontend" }
   }
 
   spec {
@@ -40,7 +40,7 @@ resource "kubernetes_deployment" "frontend" {
       spec {
         container {
           name  = "frontend"
-          image = "nginxdemos/hello" # simple nginx demo
+          image = "nginxdemos/hello"
           port { container_port = 80 }
         }
       }
@@ -48,19 +48,19 @@ resource "kubernetes_deployment" "frontend" {
   }
 }
 
-
 resource "kubernetes_service" "frontend" {
   metadata {
     name      = "frontend-service"
     namespace = kubernetes_namespace.demo.metadata[0].name
   }
+
   spec {
     selector = { app = "frontend" }
     port {
-      port        = 80
-      target_port = 80
+      port        = 80          # Service port
+      target_port = 80          # Must match container port
     }
-    type = "NodePort"
+    type = "ClusterIP"          # Correct type for Ingress
   }
 }
 
@@ -71,7 +71,7 @@ resource "kubernetes_deployment" "api" {
   metadata {
     name      = "api"
     namespace = kubernetes_namespace.demo.metadata[0].name
-    labels = { app = "api" }
+    labels    = { app = "api" }
   }
 
   spec {
@@ -97,13 +97,14 @@ resource "kubernetes_service" "api" {
     name      = "api-service"
     namespace = kubernetes_namespace.demo.metadata[0].name
   }
+
   spec {
     selector = { app = "api" }
     port {
-      port        = 80
+      port        = 5678          # Service port matches container port
       target_port = 5678
     }
-    type = "NodePort"
+    type = "ClusterIP"            # Correct for Ingress
   }
 }
 
@@ -111,15 +112,15 @@ resource "kubernetes_service" "api" {
 # 4. Ingress Resource
 ############################################################
 resource "kubernetes_ingress_v1" "demo_ingress" {
-    metadata {
-        name = "demo-ingress"
-        namespace = kubernetes_namespace.demo.metadata[0].name 
-        annotations = {
-            "kubernetes.io/ingress.class" = "gce" # Use GCP ingress controller 
-        }
+  metadata {
+    name      = "demo-ingress"
+    namespace = kubernetes_namespace.demo.metadata[0].name
+    annotations = {
+      "kubernetes.io/ingress.class" = "gce"
     }
+  }
 
-    spec {
+  spec {
     rule {
       http {
         path {
@@ -138,7 +139,7 @@ resource "kubernetes_ingress_v1" "demo_ingress" {
           backend {
             service {
               name = kubernetes_service.api.metadata[0].name
-              port { number = 80 }
+              port { number = 5678 }
             }
           }
         }
