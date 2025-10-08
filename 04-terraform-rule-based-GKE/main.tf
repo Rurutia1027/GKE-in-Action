@@ -13,6 +13,7 @@ resource "google_container_cluster" "route_based_gke_cluster" {
         disk_size_gb = 20
         oauth_scopes = ["https://www.googleapis.com/auth/cloud-platform"]
     }
+    deletion_protection = false 
 }
 
 ############################################################
