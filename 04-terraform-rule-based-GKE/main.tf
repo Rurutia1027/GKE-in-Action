@@ -1,28 +1,15 @@
 ############################################################
-# ROUTE-BASED GKE CLUSTER (Legacy Networking)
-# Simple, legacy style - GKE assigns Pod CIDRs interally
-# no secondary ranges or custom subnet needed. 
-############################################################
-
-provider "google" {
-    project = "gcp-spring-devops"
-    region = "us-central1"
-    zone = "us-central1-a"
-}
-
-
-############################################################
 # 1. Create a simple GKE cluster using route-based networking
 ############################################################
 resource "google_container_cluster" "route_based_gke_cluster" {
     name = "route-based-cluster"
     location = "us-central1" 
-    networking_mode = "ROUTE_BASED" # <-- Legacy route-based networking 
-    inital_node_count = 1
+    networking_mode = "ROUTES" # <-- Legacy route-based networking 
+    initial_node_count = 1
 
     node_config {
         machine_type = "e2-medium"
-        disk_type = "PD_STANDARD"
+        disk_type = "pd-standard"
         disk_size_gb = 20
         oauth_scopes = ["https://www.googleapis.com/auth/cloud-platform"]
     }

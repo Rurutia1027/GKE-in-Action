@@ -126,7 +126,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
     node_config {
         machine_type = "e2-medium"
-        disk_type    = "PD_STANDARD"   # cheaper HDD style
+        disk_type    = "pd-standard"   # cheaper HDD style
         disk_size_gb = 20               # smaller disk
         oauth_scopes = [
             "https://www.googleapis.com/auth/cloud-platform",

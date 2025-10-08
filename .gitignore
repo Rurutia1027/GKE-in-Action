@@ -12,3 +12,11 @@
 03-terraform-private-cluster/terraform.tfstate
 03-terraform-private-cluster/terraform.tfstate.backup
 03-terraform-private-cluster/.terraform.lock.hcl
+04-terraform-rule-based-GKE/.terraform.lock.hcl
+04-terraform-rule-based-GKE/.terraform.tfstate.lock.info
+04-terraform-rule-based-GKE/.terraform/
+04-terraform-rule-based-GKE/terraform.tfstate
+04-terraform-rule-based-GKE/terraform.tfstate.backup
+04-terraform-vpc-native-GKE/.terraform.lock.hcl
+04-terraform-vpc-native-GKE/.terraform/
+04-terraform-vpc-native-GKE/terraform.tfstate

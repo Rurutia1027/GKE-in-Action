@@ -115,7 +115,7 @@ resource "google_container_cluster" "route_based_cluster" {
     name = "route-cluster"
     location = "us-central1"
     initial_node_count = 1
-    networking_mode = "ROUTE_BASED" 
+    networking_mode = "ROUTES" 
 
     node_config = {
         machine_type = "e2-medium"
