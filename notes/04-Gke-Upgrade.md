@@ -18,7 +18,7 @@ You want to upgrade the cluster nodes to a new GKE version (1.27.x) without down
 ### Blue/Green Upgrade in GKE 
 - Blue/Green Nodes: The cluster temporarily has two sets of nodes:
 > Blue nodes: old version 
-> Green nodes: new version
+> Green nodes: new version 
 
 - Process:
 > GKE creates "green" nodes with the upgraded version

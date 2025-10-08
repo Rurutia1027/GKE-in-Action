@@ -7,3 +7,8 @@
 02-terraform-autoscaling/terraform.tfstate.backup
 02-terraform-autoscaling/.terraform/providers/registry.terraform.io/hashicorp/google/6.50.0/darwin_amd64/LICENSE.txt
 02-terraform-autoscaling/.terraform/providers/registry.terraform.io/hashicorp/google/6.50.0/darwin_amd64/terraform-provider-google_v6.50.0_x5
+03-terraform-private-cluster/.terraform/providers/registry.terraform.io/hashicorp/google/7.6.0/darwin_amd64/LICENSE.txt
+03-terraform-private-cluster/.terraform/providers/registry.terraform.io/hashicorp/google/7.6.0/darwin_amd64/terraform-provider-google_v7.6.0_x5
+03-terraform-private-cluster/terraform.tfstate
+03-terraform-private-cluster/terraform.tfstate.backup
+03-terraform-private-cluster/.terraform.lock.hcl
