@@ -18,7 +18,7 @@ data "google_client_config" "default" {}
 resource "kubernetes_namespace" "demo" {
   metadata {
     name = "ingress-demo"
-  }
+  }x
 }
 
 ############################################################
