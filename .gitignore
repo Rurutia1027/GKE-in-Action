@@ -25,3 +25,9 @@
 05-terraform-GKE-ingress/.terraform/
 05-terraform-GKE-ingress/terraform.tfstate
 05-terraform-GKE-ingress/terraform.tfstate.backup
+06-terraform-GKE-LB/.terraform.lock.hcl
+06-terraform-GKE-LB/.terraform/providers/registry.terraform.io/hashicorp/google/7.6.0/darwin_amd64/LICENSE.txt
+06-terraform-GKE-LB/.terraform/providers/registry.terraform.io/hashicorp/google/7.6.0/darwin_amd64/terraform-provider-google_v7.6.0_x5
+06-terraform-GKE-LB/.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.38.0/darwin_amd64/LICENSE.txt
+06-terraform-GKE-LB/.terraform/providers/registry.terraform.io/hashicorp/kubernetes/2.38.0/darwin_amd64/terraform-provider-kubernetes_v2.38.0_x5
+06-terraform-GKE-LB/terraform.tfstate
